@@ -1,5 +1,6 @@
 import re
 
+
 def is_palindrome1(s: str) -> bool:
     strs = []
     for char in s:
@@ -11,11 +12,12 @@ def is_palindrome1(s: str) -> bool:
             return False
     return True
 
+
 def is_palindrome2(s: str) -> bool:
     s = s.lower()
     s = re.sub('[^a-z0-9]', '', s)
     return s == s[::-1]
 
+
 print(is_palindrome1('A man, a plan, a canal: Panama'))
 print(is_palindrome2('race a car'))
-
