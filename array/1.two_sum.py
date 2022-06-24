@@ -34,6 +34,16 @@ def two_sum3(nums: List[int], target: int) -> List[int]:
             return [i, nums_map[target - num]]
 
 
+def two_sum4(nums: List[int], target: int) -> List[int]:
+    nums_map = {}
+    # two_sum3 -> 하나의 for문으로 통합
+    for i, num in enumerate(nums):
+        if target - num in nums_map:
+            return [nums_map[target - num], i]
+        nums_map[num] = i
+
+
 print(two_sum1(nums, target))
 print(two_sum2(nums, target))
 print(two_sum3(nums, target))
+print(two_sum4(nums, target))
